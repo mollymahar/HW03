@@ -6,7 +6,13 @@
 ################################################################################
 # Exercise 1
 # When you submit only include your final function: compare
-
+def compare(x, y):
+    if (x > y):
+        return 1
+    elif (x < y):
+        return -1
+    elif (x == y):
+        return 0
 
 
 
@@ -15,7 +21,12 @@
 # Exercise 2
 # When you submit only include your final function: hypotenuse
 # Do develop incrementally. Do not share here.
+import math
 
+def hypotenuse(base, height):
+    hyp_squared = base**2 + height**2
+    hyp = math.sqrt(hyp_squared)
+    return hyp
 
 
 
@@ -23,6 +34,8 @@
 ################################################################################
 # Exercise 3
 # When you submit only include your final function: is_between
+def is_between (x, y, z):
+    return (x <= y <= z)
 
 
 
@@ -56,14 +69,13 @@ def main():
 
 
 
-
     ############################################################################
     # Uncomment the below to test and before commiting:
     # # Exercise 1
     # compare(1,1)
     # compare(1,2)
     # compare(2,1)
-    # # Exercise 2
+    # Exercise 2
     # hypotenuse(1,1)
     # hypotenuse(3,4)
     # hypotenuse(1.2,12)
