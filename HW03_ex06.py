@@ -6,6 +6,7 @@
 ################################################################################
 # Exercise 1
 # When you submit only include your final function: compare
+
 def compare(x, y):
     if (x > y):
         return 1
@@ -15,46 +16,58 @@ def compare(x, y):
         return 0
 
 
-
-
 ################################################################################
 # Exercise 2
 # When you submit only include your final function: hypotenuse
 # Do develop incrementally. Do not share here.
+
 import math
 
 def hypotenuse(base, height):
-    hyp_squared = base**2 + height**2
-    hyp = math.sqrt(hyp_squared)
+    hyp = math.sqrt(base**2 + height**2)
     return hyp
-
-
 
 
 ################################################################################
 # Exercise 3
 # When you submit only include your final function: is_between
+
 def is_between (x, y, z):
     return (x <= y <= z)
-
-
-
 
 
 ################################################################################
 # Exercise 6
 # When you submit only include your final function: is_palindrome
 
-
-
+def is_palindrome(word):
+    if (len(word) > 2):
+        return (
+                # showing intermediate stage with first/last letters separated
+                # word[0] == word[-1] and
+                # word[1:-1] == word[-2:0:-1]
+                word[0:-1] == word[-1:0:-1]     # comparing forward and backward
+                )
+    else:
+        return False
 
 
 ################################################################################
 # Exercise 7
 # When you submit only include your final function: is_power
 
-
-
+def is_power(a, b):
+    if (a % b != 0):                            # check for divisibility
+        return False
+    else:                      
+        n = 1
+        while n <= a / b:                       # upper limit
+            if (a / b) == b**(n-1):             # does a/b equal some power of b?
+                # print a, "is", b, "to the power of", n
+                return True
+            else:
+                n = n + 1
+        return False
 
 
 ################################################################################
@@ -66,34 +79,31 @@ def main():
 
 
 
-
-
-
     ############################################################################
-    # Uncomment the below to test and before commiting:
+    # Uncomment the below to test and before committing:
     # # Exercise 1
-    # compare(1,1)
-    # compare(1,2)
-    # compare(2,1)
-    # Exercise 2
-    # hypotenuse(1,1)
-    # hypotenuse(3,4)
-    # hypotenuse(1.2,12)
+    print compare(1,1)
+    print compare(1,2)
+    print compare(2,1)
+    # # Exercise 2
+    print hypotenuse(1,1)
+    print hypotenuse(3,4)
+    print hypotenuse(1.2,12)
     # # Exercise 3
-    # is_between(1,2,3)
-    # is_between(2,1,3)
-    # is_between(3,1,2)
-    # is_between(1,1,2)
+    print is_between(1,2,3)
+    print is_between(2,1,3)
+    print is_between(3,1,2)
+    print is_between(1,1,2)
     # # Exercise 6
-    # is_palindrome("Python")
-    # is_palindrome("evitative")
-    # is_palindrome("sememes")
-    # is_palindrome("oooooooooooo")
+    print is_palindrome("Python")
+    print is_palindrome("evitative")
+    print is_palindrome("sememes")
+    print is_palindrome("oooooooooooo")
     # # Exercise 7
-    # is_power(28,3)
-    # is_power(27,3)
-    # is_power(248832,12)
-    # is_power(248844,12)
+    print is_power(28,3)
+    print is_power(27,3)
+    print is_power(248832,12)
+    print is_power(248844,12)
 
 
 if __name__ == "__main__":
